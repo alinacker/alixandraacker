@@ -12,17 +12,18 @@
 
 .nav {
   display: flex;
-  justify-content: space-between;
   align-items: center;
   padding: 1rem 2rem;
   max-width: 1200px;
   margin: 0 auto;
+  gap: 2rem;
 }
 
 .nav-actions {
   display: flex;
   align-items: center;
   gap: 1rem;
+  margin-left: auto;
 }
 
 .nav-brand {
@@ -137,8 +138,9 @@
     opacity: 0;
   }
   
-.nav-toggle.active .bar:nth-child(3) {
-  transform: rotate(-45deg) translate(7px, -6px);
+  .nav-toggle.active .bar:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -6px);
+  }
 }
 
 .download-btn,
@@ -167,5 +169,4 @@
 .linkedin-btn:hover {
   background: #0077b5;
   box-shadow: 0 5px 15px rgba(0, 119, 181, 0.3);
-}
 }

@@ -68,6 +68,26 @@
   position: relative;
 }
 
+/* Logo + company name row */
+.company-title-with-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+/* Constrain company logos to a consistent small size */
+.company-logo {
+  width: 100px;
+  height: 50px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+/* Place company logo beneath the header block */
+.company-logo-row {
+  margin-top: 1rem;
+}
+
 .experience-header-item:hover {
   transform: translateY(-5px);
   box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);

@@ -2,6 +2,13 @@ import React from 'react';
 import './Experience.css';
 
 const Experience = () => {
+  const companyLogoByName = {
+    Accenture: `${process.env.PUBLIC_URL}/work-logo/accenture.png`,
+    'Colonnade Capital Partners LLC': `${process.env.PUBLIC_URL}/work-logo/colonnade.png`,
+    Soles4Souls: `${process.env.PUBLIC_URL}/work-logo/soles4souls.jpg`,
+    'UN High Commissioner for Refugees': `${process.env.PUBLIC_URL}/work-logo/unhcr.png`,
+    'Unblur (AI Drone Company)': `${process.env.PUBLIC_URL}/work-logo/unblur.jpg`,
+  };
   const experiences = [
     {
       company: "Accenture",
@@ -114,12 +121,24 @@ const Experience = () => {
             <div key={index} className="experience-item">
               <div className="experience-header-item">
                 <div className="experience-company">
-                  <h3 className="company-name">{exp.company}</h3>
+                  <div className="company-title-with-logo">
+                    <h3 className="company-name">{exp.company}</h3>
+                  </div>
                   <h4 className="position-title">{exp.position}</h4>
                 </div>
                 <div className="experience-meta">
                   <span className="experience-location">{exp.location}</span>
                   <span className="experience-duration">{exp.duration}</span>
+                  {companyLogoByName[exp.company] && (
+                    <div className="company-logo-row">
+                      <img
+                        src={companyLogoByName[exp.company]}
+                        alt={`${exp.company} logo`}
+                        className="company-logo"
+                        onError={(e) => { e.currentTarget.style.display = 'none'; }}
+                      />
+                    </div>
+                  )}
                 </div>
               </div>
               <div className="experience-projects">
