@@ -36,7 +36,7 @@ const Hero = () => {
         <div className="hero-visual">
           <div className="hero-image-container">
             <img 
-              src="/ali-pic.jpeg" 
+              src={`${process.env.PUBLIC_URL}/ali-pic.jpeg`} 
               alt="Alixandra Acker - Strategic Program Leader & AI Governance Expert"
               className="hero-image"
             />

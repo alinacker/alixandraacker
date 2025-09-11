@@ -37,7 +37,7 @@ const About = () => {
           <div className="about-image">
             <div className="about-image-container">
               <img 
-                src="/ali-pic.jpeg" 
+                src={`${process.env.PUBLIC_URL}/ali-pic.jpeg`} 
                 alt="Alixandra Acker - Strategic Program Leader"
                 className="about-profile-image"
               />
