@@ -1,0 +1,320 @@
+.education {
+  background: #f8f9fa;
+  padding: 100px 0;
+}
+
+.education-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.education-content {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.education-item {
+  background: white;
+  border-radius: 20px;
+  padding: 3rem;
+  margin-bottom: 3rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.education-item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 6px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.education-item:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+}
+
+.education-header-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+  padding-bottom: 2rem;
+  border-bottom: 2px solid #f8f9fa;
+}
+
+.institution-name {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 0.5rem;
+}
+
+.degree-title {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #667eea;
+  margin-bottom: 0.5rem;
+}
+
+.education-location {
+  font-size: 1rem;
+  color: #666;
+  font-weight: 500;
+}
+
+.education-meta {
+  text-align: right;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.education-duration {
+  font-size: 1rem;
+  color: #1a1a1a;
+  font-weight: 600;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.education-gpa {
+  font-size: 0.9rem;
+  color: #667eea;
+  font-weight: 600;
+  background: rgba(102, 126, 234, 0.1);
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  display: inline-block;
+}
+
+.education-section {
+  margin-bottom: 2rem;
+}
+
+.section-label {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+}
+
+.section-label::before {
+  content: '';
+  width: 4px;
+  height: 20px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  margin-right: 0.75rem;
+  border-radius: 2px;
+}
+
+.honors-list,
+.research-list {
+  list-style: none;
+  padding: 0;
+}
+
+.honor-item,
+.research-item {
+  position: relative;
+  padding-left: 1.5rem;
+  margin-bottom: 0.75rem;
+  color: #666;
+  line-height: 1.6;
+}
+
+.honor-item::before {
+  content: '🏆';
+  position: absolute;
+  left: 0;
+  font-size: 0.9rem;
+}
+
+.research-item::before {
+  content: '🔬';
+  position: absolute;
+  left: 0;
+  font-size: 0.9rem;
+}
+
+.coursework-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 0.75rem;
+}
+
+.course-item {
+  background: #f8f9fa;
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  color: #666;
+  border-left: 3px solid #667eea;
+  transition: all 0.3s ease;
+}
+
+.course-item:hover {
+  background: #e9ecef;
+  transform: translateX(5px);
+}
+
+.thesis-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  background: rgba(102, 126, 234, 0.1);
+  padding: 1rem;
+  border-radius: 8px;
+  border-left: 4px solid #667eea;
+  width: 100%;
+}
+
+.thesis-link:hover {
+  background: rgba(102, 126, 234, 0.15);
+  transform: translateX(5px);
+  box-shadow: 0 5px 15px rgba(102, 126, 234, 0.2);
+}
+
+.thesis-text {
+  font-style: italic;
+  color: #667eea;
+  font-weight: 500;
+  margin: 0;
+}
+
+.external-link-icon {
+  color: #667eea;
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+}
+
+.thesis-link:hover .external-link-icon {
+  transform: translate(2px, -2px);
+  color: #5a6fd8;
+}
+
+.additional-experience {
+  margin-top: 4rem;
+  padding-top: 3rem;
+  border-top: 2px solid #e9ecef;
+}
+
+.subsection-title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.additional-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.additional-item {
+  background: white;
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  border-left: 4px solid #667eea;
+}
+
+.additional-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+}
+
+.additional-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin-bottom: 0.5rem;
+}
+
+.additional-organization {
+  font-size: 1rem;
+  color: #667eea;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+.additional-duration {
+  font-size: 0.9rem;
+  color: #666;
+  margin-bottom: 1rem;
+}
+
+.additional-description {
+  color: #666;
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+
+.certifications {
+  margin-top: 3rem;
+  padding-top: 3rem;
+  border-top: 2px solid #e9ecef;
+}
+
+.certifications-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.certification-item {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 1.5rem;
+  border-radius: 12px;
+  font-weight: 500;
+  text-align: center;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 20px rgba(102, 126, 234, 0.3);
+}
+
+.certification-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(102, 126, 234, 0.4);
+}
+
+@media (max-width: 768px) {
+  .education-item {
+    padding: 2rem;
+  }
+  
+  .education-header-item {
+    flex-direction: column;
+    gap: 1rem;
+    text-align: left;
+  }
+  
+  .education-meta {
+    text-align: left;
+    flex-direction: row;
+    gap: 1rem;
+  }
+  
+  .coursework-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .additional-grid,
+  .certifications-grid {
+    grid-template-columns: 1fr;
+  }
+}
