@@ -40,10 +40,8 @@ const Hero = () => {
               alt="Alixandra Acker - Strategic Program Leader & AI Governance Expert"
               className="hero-image"
             />
-            <div className="hero-image-overlay">
-              <div className="ai-ethics-badge">
-                <span className="badge-text">AI Ethics Expert</span>
-              </div>
+            <div className="ai-ethics-bubble">
+              <span className="bubble-text">AI Ethics & Governance Professional</span>
             </div>
           </div>
         </div>

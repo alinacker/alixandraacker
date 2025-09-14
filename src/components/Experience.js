@@ -4,7 +4,7 @@ import './Experience.css';
 const Experience = () => {
   const companyLogoByName = {
     Accenture: `${process.env.PUBLIC_URL}/work-logo/accenture.png`,
-    'Colonnade Capital Partners LLC': `${process.env.PUBLIC_URL}/work-logo/colonnade.png`,
+    'Colonnade Capital Partners LLC': `${process.env.PUBLIC_URL}/work-logo/portico.png`,
     Soles4Souls: `${process.env.PUBLIC_URL}/work-logo/soles4souls.jpg`,
     'UN High Commissioner for Refugees': `${process.env.PUBLIC_URL}/work-logo/unhcr.png`,
     'Unblur (AI Drone Company)': `${process.env.PUBLIC_URL}/work-logo/unblur.jpg`,

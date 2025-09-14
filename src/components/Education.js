@@ -71,6 +71,34 @@ const Education = () => {
       description: "Executed strategic organizational analysis on institutional culture; co-authored policy recommendations for Department of Defense to optimize effectiveness of new technological security frameworks",
       url: "https://nspcbatten.org/",
       logo: `${process.env.PUBLIC_URL}/work-logo/nationalsecuritycenter.svg`
+    },
+    {
+      title: "Data Research Analyst",
+      organization: "Batten School of Leadership: Global Policy Center",
+      duration: "Fall 2019",
+      description: "Translated and analyzed 20+ Spanish-language reports to build comprehensive geospatial Excel model mapping Venezuelan migration patterns; delivered policy briefs with 5-person team that guided strategic response planning for Save the Children NGO",
+      logo: `${process.env.PUBLIC_URL}/work-logo/nationalsecuritycenter.svg`
+    },
+    {
+      title: "NY Metro Lead",
+      organization: "Accenture Refugee Employee Group",
+      duration: "Dec 2022 – Sep 2024",
+      description: "Coordinated resettlement initiatives across 7 NGOs serving 500+ refugees, managing resource allocation and service delivery programs with focus on child welfare and family integration. Served as Spanish legal translator supporting vulnerable families in partnership with Tent NGO",
+      logo: `${process.env.PUBLIC_URL}/work-logo/accenture.png`
+    },
+    {
+      title: "AI Archive Volunteer",
+      organization: "Every Name Counts",
+      duration: "Oct 2022 – Aug 2024",
+      description: "Transcribed historical victim data for digital memorial preservation using AI and optical character recognition",
+      logo: `${process.env.PUBLIC_URL}/work-logo/everynamecounts.jpeg`
+    },
+    {
+      title: "Communications Designer",
+      organization: "One Journey Refugee Festival",
+      duration: "Aug 2022 – Sep 2024",
+      description: "Collaborated with marketing team to create festival's visual assets; achieved 160,000 impressions across platforms",
+      logo: `${process.env.PUBLIC_URL}/work-logo/onejourney.png`
     }
   ];
 
@@ -86,6 +114,14 @@ const Education = () => {
     {
       name: "Google: Project Management Professional Certificate; Cloud Data Analytics, Gen AI Leader (In Progress)",
       logo: `${process.env.PUBLIC_URL}/university-logo/google.png`
+    },
+    {
+      name: "UVA McIntire School of Commerce: Cybersecurity for Business Leaders",
+      logo: `${process.env.PUBLIC_URL}/university-logo/University-of-Virginia-Logo.png`
+    },
+    {
+      name: "Washington International Diplomatic Academy: Economic Tradecraft, Negotiation, Technological Management",
+      logo: `${process.env.PUBLIC_URL}/work-logo/wida.jpeg`
     }
   ];
 
@@ -182,7 +218,7 @@ const Education = () => {
         </div>
 
         <div className="additional-experience">
-          <h3 className="subsection-title">Additional Experience</h3>
+          <h3 className="subsection-title">Additional Experience and Volunteer Work</h3>
           <div className="additional-grid">
             {additionalExperience.map((exp, index) => (
               <div key={index} className="additional-item">
