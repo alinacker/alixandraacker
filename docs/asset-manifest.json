@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/alixandraacker/static/css/main.e7ae164c.css",
-    "main.js": "/alixandraacker/static/js/main.b9cc6fad.js",
+    "main.css": "/alixandraacker/static/css/main.fd47d814.css",
+    "main.js": "/alixandraacker/static/js/main.c6eaf758.js",
     "index.html": "/alixandraacker/index.html",
-    "main.e7ae164c.css.map": "/alixandraacker/static/css/main.e7ae164c.css.map",
-    "main.b9cc6fad.js.map": "/alixandraacker/static/js/main.b9cc6fad.js.map"
+    "main.fd47d814.css.map": "/alixandraacker/static/css/main.fd47d814.css.map",
+    "main.c6eaf758.js.map": "/alixandraacker/static/js/main.c6eaf758.js.map"
   },
   "entrypoints": [
-    "static/css/main.e7ae164c.css",
-    "static/js/main.b9cc6fad.js"
+    "static/css/main.fd47d814.css",
+    "static/js/main.c6eaf758.js"
   ]
 }

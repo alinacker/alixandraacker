@@ -150,23 +150,22 @@
   justify-content: center;
   width: 40px;
   height: 40px;
-  border-radius: 50%;
+  border-radius: 8px;
   background: rgba(102, 126, 234, 0.1);
   color: #667eea;
   text-decoration: none;
   transition: all 0.3s ease;
-  border: 2px solid transparent;
+  border: 1px solid rgba(102, 126, 234, 0.2);
 }
 
 .download-btn:hover,
 .linkedin-btn:hover {
   background: #667eea;
   color: white;
-  transform: translateY(-2px);
-  box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+  border-color: #667eea;
 }
 
 .linkedin-btn:hover {
   background: #0077b5;
-  box-shadow: 0 5px 15px rgba(0, 119, 181, 0.3);
+  border-color: #0077b5;
 }

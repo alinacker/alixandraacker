@@ -7,6 +7,7 @@ const Experience = () => {
     'Colonnade Capital Partners LLC': `${process.env.PUBLIC_URL}/work-logo/portico.png`,
     Soles4Souls: `${process.env.PUBLIC_URL}/work-logo/soles4souls.jpg`,
     'UN High Commissioner for Refugees': `${process.env.PUBLIC_URL}/work-logo/unhcr.png`,
+    'UVA Batten School of Public Policy and Leadership': `${process.env.PUBLIC_URL}/university-logo/University-of-Virginia-Logo.png`,
     'Unblur (AI Drone Company)': `${process.env.PUBLIC_URL}/work-logo/unblur.jpg`,
   };
   const experiences = [
@@ -84,6 +85,23 @@ const Experience = () => {
             "Secured 5 new corporate sponsors through strategic relationship building",
             "Coordinated national campaign across 20 schools",
             "Researched blockchain-based fundraising mechanisms for improved donor retention"
+          ]
+        }
+      ]
+    },
+    {
+      company: "UVA Batten School of Public Policy and Leadership",
+      position: "22nd Century Scholar Fellow",
+      location: "Charlottesville, VA",
+      duration: "Summer 2020",
+      projects: [
+        {
+          title: "Diversity and Inclusion Research Initiative",
+          achievements: [
+            "Led diversity and inclusion research initiative with 5-person team to assess community engagement challenges in hybrid-learning environments and identify strategic opportunities for improvement",
+            "Designed and executed comprehensive student engagement survey reaching 350+ Batten School students",
+            "Synthesized findings through stakeholder interviews with faculty and subject matter experts",
+            "Delivered four strategic focus areas and 12 actionable recommendations for enhancing interpersonal connections and community building"
           ]
         }
       ]
