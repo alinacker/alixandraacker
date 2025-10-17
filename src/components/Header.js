@@ -24,7 +24,7 @@ const Header = () => {
         </div>
         
         <div className="nav-actions">
-          <a 
+          {/* <a 
             href="/Alixandra Acker CV.pdf" 
             download="Alixandra_Acker_CV.pdf"
             className="download-btn"
@@ -35,7 +35,7 @@ const Header = () => {
               <polyline points="7,10 12,15 17,10"/>
               <line x1="12" y1="15" x2="12" y2="3"/>
             </svg>
-          </a>
+          </a> */}
           <a 
             href="https://www.linkedin.com/in/alixandraacker/" 
             target="_blank" 

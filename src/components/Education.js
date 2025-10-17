@@ -29,6 +29,15 @@ const Education = () => {
         "Applications of AI in global governance including multi-agent reinforcement learning systems for diplomacy",
         "AI safety in biotechnology applications",
         "Innovation diffusion patterns for responsible AI deployment"
+      ],
+      activities: [
+        "AI Safety And Ethics Club",
+        "Leverhulme Centre for the Future of Intelligence member",
+        "Clare College MCR Executive Committee",
+        "Clare College Bartender Team",
+        "Scuba Diving Society",
+        "Travel Society",
+        "Clare Women's Rowing"
       ]
     },
     {
@@ -43,7 +52,23 @@ const Education = () => {
         "Intermediate Honors (top 20% of class)",
         "Dean's List all semesters"
       ],
-      thesis: "Published Capstone Thesis"
+      thesis: "Published Capstone Thesis",
+      activities: [
+        "Phi Beta Kappa",
+        "Echols Mentor",
+        "Raven Society",
+        "National Security Intelligence and Defense Club",
+        "Colonnade Capital Partners",
+        "Pi Beta Phi Fraternity",
+        "Virginia International Crisis Simulation",
+        "International Relations Organization",
+        "Virginia Model United Nations",
+        "Madison House Pet Pals",
+        "Madison House Sin Barreras",
+        "VISAS language volunteers",
+        "Pancakes for Parkinson's",
+        "Club Running"
+      ]
     }
   ];
 
@@ -94,6 +119,27 @@ const Education = () => {
       logo: `${process.env.PUBLIC_URL}/work-logo/everynamecounts.jpeg`
     },
     {
+      title: "Fellow - Intelligence Rising Facilitators Fellowship",
+      organization: "Intelligence Rising",
+      duration: "October 2025 – Present",
+      description: "Selected as a Fellow for the Intelligence Rising Facilitators Fellowship, receiving advanced training in diplomacy, AI ethics, and strategic facilitation techniques to lead foresight simulations and guide interdisciplinary teams through high-stakes decision-making and policy analysis.",
+      logo: `${process.env.PUBLIC_URL}/work-logo/intelligencerising.webp`
+    },
+    {
+      title: "Clare College Punt Admiral",
+      organization: "Clare College, Cambridge",
+      duration: "Sep 2024 – July 2025",
+      description: "Appointed Clare College Punt Admiral, coordinating boat access and safety for students and guests while fostering community through riverside traditions and seasonal events on the River Cam. Oversaw scheduling, insurance coordination, and maintenance for Clare College's punt fleet, managing access for over 500 users and ensuring safe, efficient operations throughout peak seasons.",
+      logo: `${process.env.PUBLIC_URL}/university-logo/cc.png`
+    },
+    {
+      title: "Communications and Outreach Coordinator – Accenture DCAAT Executive Team",
+      organization: "Accenture",
+      duration: "March 2022 – September 2023",
+      description: "Led communications and outreach for Accenture's DCAAT Executive Team, designing and delivering programming for Senior Analysts and Analyst while aligning messaging with executive priorities and leveraging digital platforms to drive engagement, visibility, and cross-team collaboration.",
+      logo: `${process.env.PUBLIC_URL}/work-logo/accenture.png`
+    },
+    {
       title: "Communications Designer",
       organization: "One Journey Refugee Festival",
       duration: "Aug 2022 – Sep 2024",
@@ -108,7 +154,7 @@ const Education = () => {
       logo: `${process.env.PUBLIC_URL}/university-logo/said.png`
     },
     {
-      name: "MIT Sloan School of Management & CSAIL: AI – Implications for Business Strategy (In Progress)",
+      name: "MIT Sloan School of Management & CSAIL: AI – Implications for Business Strategy",
       logo: `${process.env.PUBLIC_URL}/university-logo/mit.jpeg`
     },
     {
@@ -211,6 +257,17 @@ const Education = () => {
                       <line x1="10" y1="14" x2="21" y2="3"/>
                     </svg>
                   </a>
+                </div>
+              )}
+              
+              {edu.activities && (
+                <div className="education-section">
+                  <h5 className="section-label">Activities & Involvement</h5>
+                  <div className="activities-grid">
+                    {edu.activities.map((activity, activityIndex) => (
+                      <span key={activityIndex} className="activity-item">{activity}</span>
+                    ))}
+                  </div>
                 </div>
               )}
             </div>
