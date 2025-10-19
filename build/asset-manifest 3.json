@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/alixandraacker/static/css/main.e7ae164c.css",
+    "main.js": "/alixandraacker/static/js/main.b9cc6fad.js",
+    "index.html": "/alixandraacker/index.html",
+    "main.e7ae164c.css.map": "/alixandraacker/static/css/main.e7ae164c.css.map",
+    "main.b9cc6fad.js.map": "/alixandraacker/static/js/main.b9cc6fad.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e7ae164c.css",
+    "static/js/main.b9cc6fad.js"
+  ]
+}
