@@ -27,9 +27,16 @@
 }
 
 .nav-brand {
-  font-size: 1.5rem;
+  font-size: 1.0rem;
   font-weight: 700;
   color: #1a1a1a;
+  text-decoration: none;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.nav-brand:hover {
+  transform: scale(1.05);
 }
 
 .brand-text {
@@ -50,6 +57,7 @@
   text-decoration: none;
   color: #333;
   font-weight: 500;
+  font-size: 0.8rem;
   transition: all 0.3s ease;
   position: relative;
   padding: 0.5rem 1rem;

@@ -1,8 +1,11 @@
 import React, { useState } from 'react';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import './Header.css';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const location = useLocation();
+  const navigate = useNavigate();
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -16,12 +19,22 @@ const Header = () => {
     setIsMenuOpen(false);
   };
 
+  const handleNavClick = (e, sectionId) => {
+    e.preventDefault();
+    if (location.pathname !== '/') {
+      navigate('/');
+      setTimeout(() => scrollToSection(sectionId), 100);
+    } else {
+      scrollToSection(sectionId);
+    }
+  };
+
   return (
     <header className="header">
       <nav className="nav">
-        <div className="nav-brand">
+        <Link to="/" className="nav-brand" onClick={() => setIsMenuOpen(false)}>
           <span className="brand-text">Alixandra Acker</span>
-        </div>
+        </Link>
         
         <div className="nav-actions">
           {/* <a 
@@ -50,22 +63,30 @@ const Header = () => {
         </div>
         
         <div className={`nav-menu ${isMenuOpen ? 'nav-menu-open' : ''}`}>
-          <a href="#about" onClick={() => scrollToSection('about')} className="nav-link">
+          {location.pathname !== '/' && (
+            <Link to="/" className="nav-link" onClick={() => setIsMenuOpen(false)}>
+              Home
+            </Link>
+          )}
+          <a href="#about" onClick={(e) => handleNavClick(e, 'about')} className="nav-link">
             About
           </a>
-          <a href="#experience" onClick={() => scrollToSection('experience')} className="nav-link">
+          <a href="#experience" onClick={(e) => handleNavClick(e, 'experience')} className="nav-link">
             Experience
           </a>
-          <a href="#education" onClick={() => scrollToSection('education')} className="nav-link">
+          <a href="#education" onClick={(e) => handleNavClick(e, 'education')} className="nav-link">
             Education
           </a>
-          <a href="#expertise" onClick={() => scrollToSection('expertise')} className="nav-link">
+          <a href="#expertise" onClick={(e) => handleNavClick(e, 'expertise')} className="nav-link">
             Expertise
           </a>
-          <a href="#projects" onClick={() => scrollToSection('projects')} className="nav-link">
+          <a href="#projects" onClick={(e) => handleNavClick(e, 'projects')} className="nav-link">
             Projects
           </a>
-          <a href="#contact" onClick={() => scrollToSection('contact')} className="nav-link">
+          <Link to="/research" className="nav-link" onClick={() => setIsMenuOpen(false)}>
+            Research
+          </Link>
+          <a href="#contact" onClick={(e) => handleNavClick(e, 'contact')} className="nav-link">
             Contact
           </a>
         </div>
