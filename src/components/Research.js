@@ -46,7 +46,7 @@ const Research = () => {
       abstract: "This thesis examines the role of hate media in inciting genocidal violence across six historical cases—Rwanda, the Islamic State, Myanmar, Guatemala, Yugoslavia, and Germany. Analyzing the enduring debate from Nuremberg to Rwanda's Media Case, this research questions whether hate media directly incites genocide or serves as a secondary driver of violence.",
       venue: "University of Virginia",
       year: "2021",
-      thumbnail: `${process.env.PUBLIC_URL}/research_papers/thumbnails/genocide.jpg`,
+      thumbnail: `${process.env.PUBLIC_URL}/research_papers/thumbnails/thesis_pic.png`,
       logo: `${process.env.PUBLIC_URL}/university-logo/University-of-Virginia-Logo.png`,
       pdf: `${process.env.PUBLIC_URL}/research_papers/1_Acker_Alixandra_2021_BA.pdf`
     }
