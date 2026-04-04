@@ -2,21 +2,15 @@
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  background-color: var(--color-bg);
 }
 
-/* Smooth scrolling for anchor links */
-html {
-  scroll-behavior: smooth;
-}
-
-/* Global section spacing */
 section {
-  padding: 80px 0;
+  padding: var(--section-padding) 0;
 }
 
 @media (max-width: 768px) {
   section {
-    padding: 60px 0;
+    padding: var(--section-padding-mobile) 0;
   }
 }
-

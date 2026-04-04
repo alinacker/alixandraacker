@@ -1,16 +1,44 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Education.css';
+
+const ExpandableCard = ({ header, children, defaultOpen = false }) => {
+  const [isOpen, setIsOpen] = useState(defaultOpen);
+
+  return (
+    <div className={`edu-card ${isOpen ? 'edu-card-open' : ''}`}>
+      <button
+        className="edu-card-header"
+        onClick={() => setIsOpen(!isOpen)}
+        aria-expanded={isOpen}
+      >
+        {header}
+        <span className={`expand-icon ${isOpen ? 'expand-icon-open' : ''}`}>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <polyline points="6,9 12,15 18,9"/>
+          </svg>
+        </span>
+      </button>
+      <div className={`edu-card-body ${isOpen ? 'edu-card-body-open' : ''}`}>
+        <div className="edu-card-body-inner">
+          {children}
+        </div>
+      </div>
+    </div>
+  );
+};
 
 const Education = () => {
   const universityLogoByName = {
     'University of Cambridge': `${process.env.PUBLIC_URL}/university-logo/cambridge.png`,
     'University of Virginia': `${process.env.PUBLIC_URL}/university-logo/University-of-Virginia-Logo.png`,
   };
+
   const education = [
     {
       institution: "University of Cambridge",
       location: "Cambridge, UK",
       degree: "MPhil Ethics of AI, Data, and Algorithms",
+      dissertation: "AI-CRISPR as Epistemic Arbiter for Sickle Cell Disease",
       duration: "2024-2025",
       honors: [
         "Cambridge Biosecurity Fellowship",
@@ -43,7 +71,7 @@ const Education = () => {
     {
       institution: "University of Virginia",
       location: "Virginia, USA",
-      degree: "B.A. Global Security and Justice | Minor in Public Policy and Leadership",
+      degree: "B.A. Global Security and Justice with Distinction | Minor in Public Policy and Leadership",
       duration: "2017-2021",
       gpa: "3.94/4.0",
       honors: [
@@ -119,10 +147,10 @@ const Education = () => {
       logo: `${process.env.PUBLIC_URL}/work-logo/everynamecounts.jpeg`
     },
     {
-      title: "Fellow - Intelligence Rising Facilitators Fellowship",
+      title: "Senior Facilitator Fellow",
       organization: "Intelligence Rising",
-      duration: "October 2025 – Present",
-      description: "Selected as a Fellow for the Intelligence Rising Facilitators Fellowship, receiving advanced training in diplomacy, AI ethics, and strategic facilitation techniques to lead foresight simulations and guide interdisciplinary teams through high-stakes decision-making and policy analysis.",
+      duration: "Sep 2025 – Present",
+      description: "Trained to lead strategic simulations on AI futures using roleplay-based decision-making to explore governance, safety, and geopolitics. Developed deep understanding of how competing stakeholders navigate ambiguity and sociotechnical policy; work directly informed by AI safety literature and collaboration with ARIA and Google DeepMind.",
       logo: `${process.env.PUBLIC_URL}/work-logo/intelligencerising.webp`
     },
     {
@@ -150,6 +178,10 @@ const Education = () => {
 
   const certifications = [
     {
+      name: "Center for AI and Digital Policy: AI Policy Clinic (In Progress)",
+      logo: null
+    },
+    {
       name: "University of Oxford Saïd Business School: MBA Fundamentals",
       logo: `${process.env.PUBLIC_URL}/university-logo/said.png`
     },
@@ -158,16 +190,12 @@ const Education = () => {
       logo: `${process.env.PUBLIC_URL}/university-logo/mit.jpeg`
     },
     {
-      name: "Google: Project Management Professional Certificate; Cloud Data Analytics, Gen AI Leader (In Progress)",
+      name: "Google: Project Management Professional Certificate (In Progress)",
       logo: `${process.env.PUBLIC_URL}/university-logo/google.png`
     },
     {
       name: "UVA McIntire School of Commerce: Cybersecurity for Business Leaders",
       logo: `${process.env.PUBLIC_URL}/university-logo/University-of-Virginia-Logo.png`
-    },
-    {
-      name: "Washington International Diplomatic Academy: Economic Tradecraft, Negotiation, Technological Management",
-      logo: `${process.env.PUBLIC_URL}/work-logo/wida.jpeg`
     }
   ];
 
@@ -180,73 +208,81 @@ const Education = () => {
             Advanced degrees in AI ethics and global security with specialized research focus on responsible AI deployment.
           </p>
         </div>
-        
-        <div className="education-content">
+
+        <div className="education-list">
           {education.map((edu, index) => (
-            <div key={index} className="education-item">
-              <div className="education-header-item">
-                <div className="education-main">
-                  <div className="education-title-with-logo">
-                    <h3 className="institution-name">{edu.institution}</h3>
-                  </div>
-                  <h4 className="degree-title">{edu.degree}</h4>
-                  <p className="education-location">{edu.location}</p>
-                </div>
-                <div className="education-meta">
-                  <span className="education-duration">{edu.duration}</span>
-                  {edu.gpa && <span className="education-gpa">GPA: {edu.gpa}</span>}
-                  {universityLogoByName[edu.institution] && (
-                    <div className="institution-logo-row">
+            <ExpandableCard
+              key={index}
+              header={
+                <div className="edu-header-content">
+                  <div className="edu-header-left">
+                    {universityLogoByName[edu.institution] && (
                       <img
                         src={universityLogoByName[edu.institution]}
                         alt={`${edu.institution} logo`}
                         className="institution-logo"
                         onError={(e) => { e.currentTarget.style.display = 'none'; }}
                       />
+                    )}
+                    <div className="edu-header-info">
+                      <h3 className="institution-name">{edu.institution}</h3>
+                      <p className="degree-title">{edu.degree}</p>
                     </div>
-                  )}
+                  </div>
+                  <div className="edu-header-right">
+                    <span className="education-location">{edu.location}</span>
+                    <span className="education-duration">{edu.duration}</span>
+                    {edu.gpa && <span className="education-gpa">GPA: {edu.gpa}</span>}
+                  </div>
                 </div>
-              </div>
-              
+              }
+            >
+              {edu.dissertation && (
+                <div className="education-section">
+                  <h5 className="section-label">Dissertation</h5>
+                  <p className="dissertation-text">{edu.dissertation}</p>
+                </div>
+              )}
+
               {edu.honors && (
                 <div className="education-section">
                   <h5 className="section-label">Honors & Awards</h5>
                   <ul className="honors-list">
-                    {edu.honors.map((honor, honorIndex) => (
-                      <li key={honorIndex} className="honor-item">{honor}</li>
+                    {edu.honors.map((honor, i) => (
+                      <li key={i} className="honor-item">{honor}</li>
                     ))}
                   </ul>
                 </div>
               )}
-              
+
               {edu.coursework && (
                 <div className="education-section">
                   <h5 className="section-label">Strategic Coursework</h5>
                   <div className="coursework-grid">
-                    {edu.coursework.map((course, courseIndex) => (
-                      <span key={courseIndex} className="course-item">{course}</span>
+                    {edu.coursework.map((course, i) => (
+                      <span key={i} className="course-item">{course}</span>
                     ))}
                   </div>
                 </div>
               )}
-              
+
               {edu.research && (
                 <div className="education-section">
                   <h5 className="section-label">Research Focus</h5>
                   <ul className="research-list">
-                    {edu.research.map((research, researchIndex) => (
-                      <li key={researchIndex} className="research-item">{research}</li>
+                    {edu.research.map((r, i) => (
+                      <li key={i} className="research-item">{r}</li>
                     ))}
                   </ul>
                 </div>
               )}
-              
+
               {edu.thesis && (
                 <div className="education-section">
                   <h5 className="section-label">Thesis</h5>
-                  <a 
-                    href="https://libraetd.lib.virginia.edu/public_view/9019s328x" 
-                    target="_blank" 
+                  <a
+                    href="https://libraetd.lib.virginia.edu/public_view/9019s328x"
+                    target="_blank"
                     rel="noopener noreferrer"
                     className="thesis-link"
                   >
@@ -259,52 +295,54 @@ const Education = () => {
                   </a>
                 </div>
               )}
-              
+
               {edu.activities && (
                 <div className="education-section">
                   <h5 className="section-label">Activities & Involvement</h5>
                   <div className="activities-grid">
-                    {edu.activities.map((activity, activityIndex) => (
-                      <span key={activityIndex} className="activity-item">{activity}</span>
+                    {edu.activities.map((a, i) => (
+                      <span key={i} className="activity-item">{a}</span>
                     ))}
                   </div>
                 </div>
               )}
-            </div>
+            </ExpandableCard>
           ))}
         </div>
 
         <div className="additional-experience">
-          <h3 className="subsection-title">Additional Experience and Volunteer Work</h3>
-          <div className="additional-grid">
+          <h3 className="subsection-title">Additional Experience & Volunteer Work</h3>
+          <div className="additional-list">
             {additionalExperience.map((exp, index) => (
-              <div key={index} className="additional-item">
-                <h4 className="additional-title">{exp.title}</h4>
-                <div className="additional-org-with-logo">
-                  {exp.logo && (
-                    <img 
-                      src={exp.logo}
-                      alt={`${exp.organization} logo`}
-                      className="additional-logo"
-                      onError={(e) => { e.currentTarget.style.display = 'none'; }}
-                    />
-                  )}
-                  {exp.url ? (
-                    <a 
-                      href={exp.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="additional-organization"
-                    >
-                      {exp.organization}
-                    </a>
-                  ) : (
-                    <span className="additional-organization">{exp.organization}</span>
-                  )}
-                </div>
-                <p className="additional-duration">{exp.duration}</p>
+              <ExpandableCard
+                key={index}
+                header={
+                  <div className="additional-header-content">
+                    <div className="additional-header-left">
+                      {exp.logo && (
+                        <img
+                          src={exp.logo}
+                          alt={`${exp.organization} logo`}
+                          className="additional-logo"
+                          onError={(e) => { e.currentTarget.style.display = 'none'; }}
+                        />
+                      )}
+                      <div className="additional-header-info">
+                        <h4 className="additional-title">{exp.title}</h4>
+                        <p className="additional-organization-text">{exp.organization}</p>
+                      </div>
+                    </div>
+                    <span className="additional-duration">{exp.duration}</span>
+                  </div>
+                }
+              >
                 <p className="additional-description">{exp.description}</p>
-              </div>
+                {exp.url && (
+                  <a href={exp.url} target="_blank" rel="noopener noreferrer" className="additional-link">
+                    Visit website &rarr;
+                  </a>
+                )}
+              </ExpandableCard>
             ))}
           </div>
         </div>
@@ -315,7 +353,7 @@ const Education = () => {
             {certifications.map((cert, index) => (
               <div key={index} className="certification-item">
                 <div className="certification-content">
-                  <img 
+                  <img
                     src={cert.logo}
                     alt={`${cert.name.split(':')[0]} logo`}
                     className="certification-logo"

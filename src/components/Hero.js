@@ -4,44 +4,24 @@ import './Hero.css';
 const Hero = () => {
   return (
     <section className="hero">
-      <div className="hero-container">
-        <div className="hero-content">
-          <h1 className="hero-title">
-            <span className="hero-greeting">Hello, I'm</span>
-            <span className="hero-name">Alixandra Acker</span>
-          </h1>
-          <h2 className="hero-subtitle">
-            Strategic Program Leader in AI Safety and Governance
-          </h2>
-          <h3 className="hero-subheadline">
-            Bridging research, policy, and implementation to enable responsible AI at scale.
-          </h3>
-          <p className="hero-description">
-            I specialize in AI and technology systems spanning healthcare, cybersecurity, diplomacy, and sustainability — driving secure, ethical, and resilient digital transformation. With a Cambridge foundation in AI safety research and over three years leading enterprise programs, I've managed initiatives exceeding $450M in scope, advancing trust, compliance, and accountability across 190+ countries.
-          </p>
-          <div className="hero-buttons">
-            <button 
-              className="btn btn-primary"
-              onClick={() => document.getElementById('contact').scrollIntoView({ behavior: 'smooth' })}
-            >
-              Get In Touch
-            </button>
-            <button 
-              className="btn btn-secondary"
-              onClick={() => document.getElementById('about').scrollIntoView({ behavior: 'smooth' })}
-            >
-              Learn More
-            </button>
-          </div>
-        </div>
-        <div className="hero-visual">
-          <div className="hero-image-container">
-            <img 
-              src={`${process.env.PUBLIC_URL}/ali_pic_hero.jpg`} 
-              alt="Alixandra Acker - Strategic Program Leader & AI Safety and Governance"
-              className="hero-image"
-            />
-          </div>
+      <div className="hero-decoration">
+        <svg className="hero-line" viewBox="0 0 800 600" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+          <path d="M-50 300 C100 100, 300 500, 450 250 S700 400, 850 200" stroke="var(--color-accent)" strokeWidth="1" opacity="0.12" fill="none"/>
+          <path d="M-100 450 C50 250, 250 550, 400 350 S650 500, 900 300" stroke="var(--color-accent)" strokeWidth="1" opacity="0.08" fill="none"/>
+        </svg>
+      </div>
+
+      <div className="hero-content">
+        <span className="hero-greeting">Hello, I'm</span>
+        <h1 className="hero-name">Alixandra Acker</h1>
+        <p className="hero-tagline">
+          <em>AI Safety & Governance. Research to Impact.</em>
+        </p>
+        <p className="hero-description">
+          Bridging research, policy, and implementation to enable responsible AI at scale — across healthcare, cybersecurity, diplomacy, and sustainability.
+        </p>
+        <div className="hero-scroll" onClick={() => document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' })}>
+          <span className="hero-scroll-arrow">&#8595;</span>
         </div>
       </div>
     </section>
