@@ -178,8 +178,8 @@ const Education = () => {
 
   const certifications = [
     {
-      name: "Center for AI and Digital Policy: AI Policy Clinic (In Progress)",
-      logo: null
+      name: "Center for AI and Digital Policy: AI Policy Clinic - Distinction",
+      logo: `${process.env.PUBLIC_URL}/university-logo/center_4_ai_and_digital_policy.png`
     },
     {
       name: "University of Oxford Saïd Business School: MBA Fundamentals",

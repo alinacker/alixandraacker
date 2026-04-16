@@ -59,7 +59,7 @@ const Experience = () => {
     'Accenture Song': `${process.env.PUBLIC_URL}/work-logo/accenture.png`,
     'Intelligence Rising': `${process.env.PUBLIC_URL}/work-logo/intelligencerising.webp`,
     'Center for AI and Digital Policy': `${process.env.PUBLIC_URL}/work-logo/center_4_ai_and_digital_policy.png`,
-    'AE Global Summit': null,
+    'AE Global Summit': `${process.env.PUBLIC_URL}/work-logo/thinking.png`,
     'Accenture': `${process.env.PUBLIC_URL}/work-logo/accenture.png`,
     'Colonnade Capital Partners LLC': `${process.env.PUBLIC_URL}/work-logo/portico.png`,
     Soles4Souls: `${process.env.PUBLIC_URL}/work-logo/soles4souls.jpg`,
