@@ -33,13 +33,13 @@ const Footer = () => {
               <a href="#about" onClick={(e) => handleNavClick(e, 'about')} className="footer-link">About</a>
               <a href="#experience" onClick={(e) => handleNavClick(e, 'experience')} className="footer-link">Experience</a>
               <a href="#education" onClick={(e) => handleNavClick(e, 'education')} className="footer-link">Education</a>
-              <a href="#expertise" onClick={(e) => handleNavClick(e, 'expertise')} className="footer-link">Expertise</a>
             </div>
 
             <div className="footer-col">
               <h4 className="footer-col-title">More</h4>
-              <a href="#projects" onClick={(e) => handleNavClick(e, 'projects')} className="footer-link">Projects</a>
+              <Link to="/writing" className="footer-link">Latest Writing</Link>
               <Link to="/research" className="footer-link">Research</Link>
+              <Link to="/off-the-clock" className="footer-link">Off the Clock</Link>
               <a href="#contact" onClick={(e) => handleNavClick(e, 'contact')} className="footer-link">Contact</a>
             </div>
 

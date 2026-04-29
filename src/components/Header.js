@@ -6,9 +6,9 @@ const navItems = [
   { label: 'About', id: 'about' },
   { label: 'Experience', id: 'experience' },
   { label: 'Education', id: 'education' },
-  { label: 'Expertise', id: 'expertise' },
-  { label: 'Projects', id: 'projects' },
+  { label: 'Latest Writing', route: '/writing' },
   { label: 'Research', route: '/research' },
+  { label: 'Off the Clock', route: '/off-the-clock' },
   { label: 'Contact', id: 'contact' },
 ];
 
@@ -117,6 +117,7 @@ const Header = () => {
               className={`nav-toggle ${isMenuOpen ? 'nav-toggle-open' : ''}`}
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               aria-label="Toggle menu"
+              aria-expanded={isMenuOpen}
             >
               <span className="bar"></span>
               <span className="bar"></span>

@@ -90,7 +90,7 @@ const Experience = () => {
       company: "Accenture Song",
       position: "AI & Data Consultant",
       location: "London, UK",
-      duration: "Jan 2025 - Present",
+      duration: "Jan 2026 - Present",
       projects: [
         {
           title: "Data Strategy & Transformation",
@@ -105,7 +105,7 @@ const Experience = () => {
       company: "Center for AI and Digital Policy",
       position: "Research Group Member",
       location: "London, UK",
-      duration: "Jan 2025 - Present",
+      duration: "Jan 2026 - Present",
       projects: [
         {
           title: "AI Governance Research & Policy Analysis",
