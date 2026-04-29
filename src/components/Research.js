@@ -46,7 +46,7 @@ const Research = () => {
       abstract: "Examines the conditions under which AI-powered satellite technology scales successfully in agricultural contexts across Sub-Saharan Africa using Kenya as a primary case study. Applies an innovative systems framework to analyse how technology diffusion, institutional capacity, and data infrastructure interact to determine whether agritech reaches the smallholder farmers who need it most. Sits at the intersection of AI development economics, global food security, and technology governance.",
       venue: "University of Cambridge",
       year: "February 2025",
-      thumbnail: `${process.env.PUBLIC_URL}/research_papers/thumbnails/KENYA.jpg`,
+      thumbnail: `${process.env.PUBLIC_URL}/research_papers/thumbnails/kenya.jpg`,
       logo: `${process.env.PUBLIC_URL}/university-logo/cambridge.png`,
       pdf: `${process.env.PUBLIC_URL}/research_papers/4781_RE1_ GROUNDING KENYA'S AGRITECH SUCCESS - AN INNOVATIVE SYSTEMS APPROACH TO SCALING AI SATELLITE TECHNOLOGY IN SUB-SAHARAN AFRICAN UNDER THE AFRICAN SPACE AGENCY.pdf`
     },
