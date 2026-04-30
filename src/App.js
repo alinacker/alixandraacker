@@ -12,6 +12,7 @@ import Research from './components/Research';
 import Writing from './components/Writing';
 import WritingPost from './components/WritingPost';
 import OffTheClock from './components/OffTheClock';
+import SEO, { siteUrl } from './components/SEO';
 import './App.css';
 
 const ScrollToTop = () => {
@@ -33,6 +34,25 @@ function App() {
         <Routes>
           <Route path="/" element={
             <>
+              <SEO
+                title="Alixandra Acker - AI Strategy & Safety"
+                description="Alixandra Acker researches AI governance, AI safety, technology policy, and global development, with writing and research on responsible frontier AI."
+                path="/"
+                structuredData={{
+                  '@context': 'https://schema.org',
+                  '@type': 'Person',
+                  name: 'Alixandra Acker',
+                  url: siteUrl,
+                  jobTitle: 'AI governance and technology policy researcher',
+                  knowsAbout: [
+                    'AI governance',
+                    'AI safety',
+                    'Technology policy',
+                    'Global development',
+                    'Responsible AI',
+                  ],
+                }}
+              />
               <Hero />
               <About />
               <Experience />

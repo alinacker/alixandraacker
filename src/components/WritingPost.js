@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useParams, Navigate } from 'react-router-dom';
-import { Helmet } from 'react-helmet-async';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
+import SEO, { siteUrl } from './SEO';
 import { getPostBySlug, posts } from '../content/writing';
 import './WritingPost.css';
 
@@ -49,17 +49,27 @@ const WritingPost = () => {
 
   return (
     <div className="post-page">
-      <Helmet>
-        <title>{post.title} — Alixandra Acker</title>
-        <meta name="description" content={post.summary || post.subtitle || ''} />
-        <meta property="og:title" content={post.title} />
-        <meta
-          property="og:description"
-          content={post.summary || post.subtitle || ''}
-        />
-        {post.image && <meta property="og:image" content={post.image} />}
-        <meta property="og:type" content="article" />
-      </Helmet>
+      <SEO
+        title={`${post.title} — Alixandra Acker`}
+        description={post.summary || post.subtitle || ''}
+        path={`/writing/${post.slug}`}
+        type="article"
+        image={post.image}
+        structuredData={{
+          '@context': 'https://schema.org',
+          '@type': 'Article',
+          headline: post.title,
+          description: post.summary || post.subtitle,
+          datePublished: post.date,
+          author: {
+            '@type': 'Person',
+            name: 'Alixandra Acker',
+            url: siteUrl,
+          },
+          mainEntityOfPage: `${siteUrl}/writing/${post.slug}`,
+          image: post.image ? `${siteUrl}${post.image}` : undefined,
+        }}
+      />
 
       <div
         className="post-progress"

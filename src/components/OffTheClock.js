@@ -1,5 +1,4 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { Helmet } from 'react-helmet-async';
 import {
   ComposableMap,
   Geographies,
@@ -7,6 +6,7 @@ import {
   Line,
   Marker,
 } from 'react-simple-maps';
+import SEO from './SEO';
 import ShelfObjects from './OffTheClockShelfObjects';
 import './OffTheClock.css';
 
@@ -371,13 +371,12 @@ const OffTheClock = () => {
 
   return (
     <div className="off-clock-page">
-      <Helmet>
-        <title>Off the Clock — Alixandra Acker</title>
-        <meta
-          name="description"
-          content="A personal snapshot of what Alixandra Acker is doing, reading, and thinking about outside of work."
-        />
-      </Helmet>
+      <SEO
+        title="Off the Clock — Alixandra Acker"
+        description="A personal snapshot of what Alixandra Acker is reading, making, visiting, and thinking about outside of work."
+        path="/off-the-clock"
+        image="/off-the-clock/afewmoments_1.png"
+      />
 
       <div className="off-clock-content">
         <section className="off-clock-hero">

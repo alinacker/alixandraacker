@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Helmet } from 'react-helmet-async';
+import SEO from './SEO';
 import { posts } from '../content/writing';
 import './Writing.css';
 
@@ -13,13 +13,12 @@ const formatDate = (iso) =>
 const Writing = () => {
   return (
     <div className="writing-page">
-      <Helmet>
-        <title>Latest Writing — Alixandra Acker</title>
-        <meta
-          name="description"
-          content="Blog posts, essays, and punchy pieces on AI safety, governance, and the political economy of frontier AI."
-        />
-      </Helmet>
+      <SEO
+        title="Latest Writing — Alixandra Acker"
+        description="Essays by Alixandra Acker on AI safety, AI governance, energy, political economy, and the global distribution of frontier AI risk."
+        path="/writing"
+        image={posts[0]?.image}
+      />
 
       <section className="writing">
         <div className="container">

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import SEO from './SEO';
 import './Research.css';
 
 const Research = () => {
@@ -12,7 +13,7 @@ const Research = () => {
       authors: "Alixandra Acker, Anamika Chatterjee, Adithya Moorthy, Anatasiya Korsak",
       abstract: "A comprehensive analysis of Chinese AI surveillance systems, human rights governance, and AI law as part of CAIDP's annual AI Governance Index covering 90 countries. Examines how China's regulatory architecture, state surveillance infrastructure, and international AI diplomacy interact with global governance frameworks including the EU AI Act and UNESCO AI Ethics Recommendation.",
       venue: "Centre for AI and Digital Policy",
-      year: "Forthcoming 2025",
+      year: "Forthcoming 2027",
       thumbnail: `${process.env.PUBLIC_URL}/research_papers/thumbnails/china-pic.jpg`,
       logo: `${process.env.PUBLIC_URL}/university-logo/center_4_ai_and_digital_policy.png`,
       pdf: ""
@@ -105,6 +106,12 @@ const Research = () => {
 
   return (
     <div className="research-page">
+      <SEO
+        title="Research Papers — Alixandra Acker"
+        description="Research by Alixandra Acker on AI governance, AI safety, biotechnology, data sovereignty, diplomacy, and technology policy in global development."
+        path="/research"
+        image="/research_papers/thumbnails/kenya.jpg"
+      />
       <section className="research">
         <div className="container">
           <div className="research-header">
