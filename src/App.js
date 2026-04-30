@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { Routes, Route, useLocation } from 'react-router-dom';
 import { HelmetProvider } from 'react-helmet-async';
 import { Analytics } from '@vercel/analytics/react';
+import { SpeedInsights } from '@vercel/speed-insights/react';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import About from './components/About';
@@ -68,6 +69,7 @@ function App() {
         </Routes>
         <Footer />
         <Analytics />
+        <SpeedInsights />
       </div>
     </HelmetProvider>
   );
