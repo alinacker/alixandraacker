@@ -10,6 +10,8 @@ const formatDate = (iso) =>
     month: 'long',
   });
 
+const writingPreviewImage = posts.find((post) => post.image)?.image;
+
 const Writing = () => {
   return (
     <div className="writing-page">
@@ -17,7 +19,7 @@ const Writing = () => {
         title="Latest Writing — Alixandra Acker"
         description="Essays by Alixandra Acker on AI safety, AI governance, energy, political economy, and the global distribution of frontier AI risk."
         path="/writing"
-        image={posts[0]?.image}
+        image={writingPreviewImage}
       />
 
       <section className="writing">

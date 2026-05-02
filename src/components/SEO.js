@@ -53,5 +53,5 @@ const SEO = ({
   );
 };
 
-export { siteUrl };
+export { siteUrl, toAbsoluteUrl };
 export default SEO;

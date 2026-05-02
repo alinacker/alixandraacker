@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Link, useParams, Navigate } from 'react-router-dom';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
-import SEO, { siteUrl } from './SEO';
+import SEO, { siteUrl, toAbsoluteUrl } from './SEO';
 import { getPostBySlug, posts } from '../content/writing';
 import './WritingPost.css';
 
@@ -67,7 +67,7 @@ const WritingPost = () => {
             url: siteUrl,
           },
           mainEntityOfPage: `${siteUrl}/writing/${post.slug}`,
-          image: post.image ? `${siteUrl}${post.image}` : undefined,
+          image: toAbsoluteUrl(post.image),
         }}
       />
 
