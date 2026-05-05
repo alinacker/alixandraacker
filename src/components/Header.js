@@ -4,8 +4,8 @@ import './Header.css';
 
 const navItems = [
   { label: 'About', id: 'about' },
-  { label: 'Experience', id: 'experience' },
   { label: 'Education', id: 'education' },
+  { label: 'Experience', id: 'experience' },
   { label: 'Latest Writing', route: '/writing' },
   { label: 'Research', route: '/research' },
   { label: 'Off the Clock', route: '/off-the-clock' },

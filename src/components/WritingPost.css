@@ -309,3 +309,72 @@
     text-align: left;
   }
 }
+
+@media print {
+  @page {
+    margin: 0;
+  }
+
+  .header,
+  .nav-overlay,
+  .footer,
+  .post-progress,
+  .post-back,
+  .post-nav {
+    display: none !important;
+  }
+
+  .post-page {
+    min-height: auto;
+    padding-top: 0;
+    background: #fff;
+  }
+
+  .post {
+    max-width: 720px;
+    padding: 0.65in 0.75in;
+  }
+
+  .post-header {
+    margin-bottom: 28px;
+  }
+
+  .post-meta,
+  .post-byline {
+    color: #666;
+  }
+
+  .post-title {
+    font-size: 28pt;
+  }
+
+  .post-subtitle {
+    font-size: 14pt;
+  }
+
+  .post-hero {
+    margin: 0 0 28px;
+    break-inside: avoid;
+  }
+
+  .post-body {
+    font-size: 11pt;
+    line-height: 1.55;
+  }
+
+  .post-body p {
+    text-wrap: auto;
+  }
+
+  .post-body p:first-of-type::first-letter {
+    float: none;
+    font: inherit;
+    margin: 0;
+    color: inherit;
+  }
+
+  .post-body h2,
+  .post-body h3 {
+    break-after: avoid;
+  }
+}

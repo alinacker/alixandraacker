@@ -54,12 +54,61 @@ const ExperienceCard = ({ exp, logo }) => {
   );
 };
 
+const AdditionalExperienceCard = ({ exp }) => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  return (
+    <div className={`experience-card ${isOpen ? 'experience-card-open' : ''}`}>
+      <button
+        className="experience-card-header"
+        onClick={() => setIsOpen(!isOpen)}
+        aria-expanded={isOpen}
+      >
+        <div className="experience-card-left">
+          {exp.logo && (
+            <img
+              src={exp.logo}
+              alt={`${exp.organization} logo`}
+              className="company-logo"
+              onError={(e) => { e.currentTarget.style.display = 'none'; }}
+            />
+          )}
+          <div className="experience-card-info">
+            <h3 className="company-name">{exp.organization}</h3>
+            <p className="position-title">{exp.title}</p>
+          </div>
+        </div>
+        <div className="experience-card-right">
+          <span className="experience-duration">{exp.duration}</span>
+          <span className={`expand-icon ${isOpen ? 'expand-icon-open' : ''}`}>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <polyline points="6,9 12,15 18,9"/>
+            </svg>
+          </span>
+        </div>
+      </button>
+
+      <div className={`experience-card-body ${isOpen ? 'experience-card-body-open' : ''}`}>
+        <div className="experience-card-body-inner">
+          <p className="additional-description">{exp.description}</p>
+          {exp.url && (
+            <a href={exp.url} target="_blank" rel="noopener noreferrer" className="additional-link">
+              Visit website &rarr;
+            </a>
+          )}
+        </div>
+      </div>
+    </div>
+  );
+};
+
 const Experience = () => {
   const companyLogoByName = {
     'Accenture Song': `${process.env.PUBLIC_URL}/work-logo/accenture.png`,
     'Intelligence Rising': `${process.env.PUBLIC_URL}/work-logo/intelligencerising.webp`,
     'Center for AI and Digital Policy': `${process.env.PUBLIC_URL}/work-logo/center_4_ai_and_digital_policy.png`,
     'AE Global Summit': `${process.env.PUBLIC_URL}/work-logo/thinking.png`,
+    'Thinking About Thinking - AE Global Summit': `${process.env.PUBLIC_URL}/work-logo/thinking.png`,
     'Accenture': `${process.env.PUBLIC_URL}/work-logo/accenture.png`,
     'Colonnade Capital Partners LLC': `${process.env.PUBLIC_URL}/work-logo/portico.png`,
     Soles4Souls: `${process.env.PUBLIC_URL}/work-logo/soles4souls.jpg`,
@@ -70,63 +119,65 @@ const Experience = () => {
 
   const experiences = [
     {
-      company: "Intelligence Rising",
-      position: "Program Management & Partnerships",
-      location: "London, UK",
-      duration: "Dec 2025 - Present",
-      projects: [
-        {
-          title: "AI Governance Workshops & Operations",
-          achievements: [
-            "Streamlining strategic partnership development and client outreach system for AI governance workshops targeting 100+ government organizations, frontier AI companies, and scientific institutions",
-            "Manage operations for AI wargame including Google DeepMind workshop: participant recruitment across 80+ stakeholders, quality assurance systems, asset production coordination, logistics management and communications",
-            "Build CRM system and communication templates for external stakeholder engagement across 4 corporate sectors",
-            "Design and document project management frameworks and procedures to enable onboarding and program scaling"
-          ]
-        }
-      ]
-    },
-    {
       company: "Accenture Song",
       position: "AI & Data Consultant",
       location: "London, UK",
       duration: "Jan 2026 - Present",
       projects: [
         {
-          title: "Data Strategy & Transformation",
+          title: "CRM Analysis, Measurement & Responsible AI",
           achievements: [
-            "Led data strategy for a £10M transformation sprint, delivering margin-uplift recommendations, defining and tracking new EV-loyalty and CRM data flows, and aligning product, marketing, and engineering teams around a unified data operating model",
-            "Developed the CRM and customer-value levers within a £25M omnichannel value case, identifying data-monetization opportunities, lifecycle interventions, and analytics capabilities to drive measurable commercial impact"
+            "Leading functional data requirements for CRM analysis and measurement with executive stakeholders",
+            "Directed data strategy for a digital transformation sprint, defining AI-integrated CRM and loyalty data flows and aligning product and engineering teams around a unified operating model",
+            "Spearheads Accenture-wide Responsible AI governance initiatives: chair monthly cross-functional working sessions on AI bias mitigation, algorithmic transparency, model risk, and governance best practices for senior stakeholders"
           ]
         }
       ]
     },
     {
       company: "Center for AI and Digital Policy",
-      position: "Research Group Member",
+      position: "AI Governance Fellow",
       location: "London, UK",
-      duration: "Jan 2026 - Present",
+      duration: "Jan 2026 - April 2026",
       projects: [
         {
-          title: "AI Governance Research & Policy Analysis",
+          title: "AI Governance Index & Regulatory Analysis",
           achievements: [
-            "Contributing to hands-on policy research, regulatory analysis, and submissions to governments and international institutions, advancing evidence-based and rights-focused AI governance",
-            "Drafting China country update for CAIDP's Global 2026 AI Governance Index, synthesizing policy developments, regulatory trends, and governance signals"
+            "Co-authored the China chapter of CAIDP's AI Governance Index 2027, a published benchmark covering 90 countries, synthesising regulatory developments, governance signals, and policy trends",
+            "Conducted hands-on regulatory analysis and submissions to 10+ governments and international institutions on rights-focused AI governance; graduated the fellowship with distinction",
+            "Tracked implementation of major regulatory regimes including the EU AI Act, GPAI Code of Practice, and comparable frameworks to assess compliance trajectories of frontier AI developers"
           ]
         }
       ]
     },
     {
-      company: "AE Global Summit",
-      position: "Engagement Ambassador, Open Problems for AI",
+      company: "Intelligence Rising",
+      position: "Program Management & Partnerships; Facilitator",
       location: "London, UK",
-      duration: "Oct 2025",
+      duration: "Sep 2025 - Present",
       projects: [
         {
-          title: "AI Safety & Governance Summit",
+          title: "AI Governance Simulations & Partnerships",
           achievements: [
-            "Engaged with 40 leading AI safety and governance experts from DeepMind, NVIDIA, and Oxford on open problems in responsible AI deployment",
-            "Facilitated discussions bridging academic and industry perspectives on AI governance"
+            "Help lead operational delivery and facilitation of AI governance wargames, including a workshop in partnership with Google DeepMind, engaging 100+ stakeholders across frontier AI companies, government agencies, and scientific institutions",
+            "Collaborated with ARIA on empirical research into the future of AI and science (synthetic biology, ecosystem engineering, computational materials science) to develop \"Science 2030\" simulation exercise with DeepMind",
+            "Design participant recruitment systems, quality assurance frameworks, new CRM infrastructure, and program documentation to enable scaling of AI governance simulation programmes across 110+ new client organisations",
+            "Trained to lead strategic simulations on AI futures using roleplay-based decision-making to explore governance, safety, and geopolitics. Participants explore competing incentives and build capacity to navigate AI risk"
+          ]
+        }
+      ]
+    },
+    {
+      company: "Thinking About Thinking - AE Global Summit",
+      position: "Engagement Ambassador & Academic Fellow",
+      location: "London, UK",
+      duration: "Oct 2025 - Present",
+      projects: [
+        {
+          title: "AI Safety & Governance Convening",
+          achievements: [
+            "Attends regular seminars with leading researchers and entrepreneurs working across AI, neuroscience, cognitive science",
+            "Facilitates panel discussions at biannual 'Thinking About Thinking' summit with 80+ AI safety and governance experts from DeepMind, NVIDIA, and Oxford on open problems in frontier AI deployment and risk management"
           ]
         }
       ]
@@ -231,6 +282,75 @@ const Experience = () => {
     }
   ];
 
+  const additionalExperience = [
+    {
+      title: "AI Trainer - English Language Specialist",
+      organization: "Invisible AI",
+      duration: "Aug 2025 - Present",
+      description: "Selected to join Invisible AI's specialist network supporting the development of advanced language models. Role focuses on training AI systems in nuanced English usage, communication clarity, and transparent feedback.",
+      url: "https://www.invisible.ai/",
+      logo: `${process.env.PUBLIC_URL}/work-logo/invisibleai.png`
+    },
+    {
+      title: "Executive Tutor",
+      organization: "Ringle",
+      duration: "Sep 2024 - Sep 2025",
+      description: "Delivered one-to-one instruction for Korean C-suite and senior leaders, strengthening AI literacy and executive-level global business communication for high-stakes decision-making. Designed and taught tailored curricula for 60+ executive and senior-professional learners, adapting AI concepts and communication coaching to individual industry contexts and leadership needs.",
+      url: "https://www.ringletutor.com/en/tutor/landing/home",
+      logo: `${process.env.PUBLIC_URL}/work-logo/ringle.png`
+    },
+    {
+      title: "Punt Admiral",
+      organization: "Cambridge Clare College",
+      duration: "Oct 2024 - July 2025",
+      description: "Appointed Clare College Punt Admiral, coordinating boat access and safety for students and guests while fostering community through riverside traditions and seasonal events on the River Cam. Oversaw scheduling, insurance coordination, and maintenance for Clare College's punt fleet, managing access for over 500 students, professors, and alumni, ensuring safe, efficient operations throughout peak seasons.",
+      logo: `${process.env.PUBLIC_URL}/university-logo/cc.png`
+    },
+    {
+      title: "Communications Designer",
+      organization: "One Journey Refugee Festival",
+      duration: "Aug 2022 - Sep 2024",
+      description: "Collaborated with marketing team to create festival's visual assets; achieved 160,000 impressions across platforms",
+      logo: `${process.env.PUBLIC_URL}/work-logo/onejourney.png`
+    },
+    {
+      title: "NY Metro Lead",
+      organization: "Accenture Refugee Employee Group",
+      duration: "Dec 2022 - Sep 2024",
+      description: "Coordinated resettlement initiatives across 7 NGOs serving 500+ refugees, managing resource allocation and service delivery programs with focus on child welfare and family integration. Served as Spanish legal translator supporting vulnerable families in partnership with Tent NGO",
+      logo: `${process.env.PUBLIC_URL}/work-logo/accenture.png`
+    },
+    {
+      title: "AI Archive Volunteer",
+      organization: "Every Name Counts",
+      duration: "Oct 2022 - Aug 2024",
+      description: "Transcribed and validated 300+ historical victim data using AI and optical character recognition to support large-scale digitization program for digital memorial preservation and archival accessibility.",
+      logo: `${process.env.PUBLIC_URL}/work-logo/everynamecounts.jpeg`
+    },
+    {
+      title: "Communications & Outreach Coordinator",
+      organization: "Accenture DCAAT",
+      duration: "March 2022 - September 2023",
+      description: "Led communications and outreach for Accenture's DCAAT Executive Team, designing and delivering programming for 150+ Senior Analysts and Analysts while aligning messaging with executive priorities and leveraging digital platforms to drive engagement, visibility, and cross-team collaboration.",
+      logo: `${process.env.PUBLIC_URL}/work-logo/accenture.png`
+    },
+    {
+      title: "Space Force Analyst",
+      organization: "DoD & Batten School of Leadership: National Security Center",
+      duration: "Spring 2020",
+      description: "Executed strategic organizational analysis on institutional culture; co-authored policy recommendations for Department of Defense to optimize effectiveness of new technological security frameworks",
+      url: "https://nspcbatten.org/",
+      logo: `${process.env.PUBLIC_URL}/work-logo/nationalsecuritycenter.svg`
+    },
+    {
+      title: "Data Research Analyst",
+      organization: "Batten School of Leadership: Global Policy Center",
+      duration: "Fall 2019",
+      description: "Translated and analyzed 20+ Spanish-language reports to build comprehensive geospatial Excel model mapping Venezuelan migration patterns; delivered policy briefs with 5-person team that guided strategic response planning for Save the Children NGO",
+      logo: `${process.env.PUBLIC_URL}/work-logo/nationalsecuritycenter.svg`
+    }
+  ];
+
   return (
     <section id="experience" className="experience">
       <div className="container">
@@ -248,6 +368,15 @@ const Experience = () => {
               logo={companyLogoByName[exp.company]}
             />
           ))}
+        </div>
+
+        <div className="additional-experience">
+          <h3 className="subsection-title">Additional Experience & Volunteer Work</h3>
+          <div className="experience-list">
+            {additionalExperience.map((exp, index) => (
+              <AdditionalExperienceCard key={index} exp={exp} />
+            ))}
+          </div>
         </div>
       </div>
     </section>

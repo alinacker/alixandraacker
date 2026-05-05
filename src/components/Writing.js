@@ -27,8 +27,10 @@ const Writing = () => {
           <div className="writing-header">
             <h1 className="page-title">Latest Writing</h1>
             <p className="page-subtitle">
-              Blog posts, essays, and punchy pieces on AI safety, governance,
-              and the political economy of frontier AI.
+              Blog posts, essays, and punchy pieces on AI safety and
+              governance, business, and the political economy of frontier AI,
+              drawing on what I've read, heard, and want to think through more
+              carefully.
             </p>
           </div>
 

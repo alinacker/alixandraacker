@@ -25,7 +25,7 @@ const About = () => {
               I came to this through an unusual path: undergraduate research on global security and justice, a Cambridge MPhil studying multi-agent reinforcement learning, agritech innovation, and AI-enabled biotech governance, and several years delivering large-scale technology programs across 190+ countries for governments, NGOs, and startups. That combination of research depth and operational experience shapes how I work day to day: translating between the technical frontier and the institutions that have to govern it, whether they be commercial, governmental, or scientific.
             </p>
             <p>
-              Currently I design AI governance simulations with Google DeepMind at Intelligence Rising, lead data strategy and business analysis at Accenture Song, and conduct independent research on the political economy of frontier AI safety. I work best in roles that demand both strategic rigour and ethical nuance — where the research has to actually land somewhere.
+              Currently I design AI governance simulations with Google DeepMind at Intelligence Rising, lead data strategy and business analysis at Accenture Song, and conduct independent research on the political economy of frontier AI safety. I work best in roles that demand both strategic rigour and ethical nuance, where the research has to actually land somewhere.
             </p>
             <p>
               Outside of work I'm usually found in a community garden, hiking somewhere cold, or reading about things that have nothing to do with AI — which, it turns out, is often where the best ideas come from.
