@@ -19,13 +19,16 @@ const About = () => {
 
           <div className="about-text">
             <p>
-              My work sits at the intersection of AI safety, governance, and global systems design. I'm deeply motivated by how institutions can deploy AI responsibly — not just efficiently — ensuring that innovation strengthens human oversight, security, and sustainability.
+              I'm a researcher, governance specialist, and consultant based in London, working at the intersection of AI safety, political economy, and global development. I'm motivated by a simple throughline: how AI capabilities interact with existing power structures, and who bears the risk when governance fails. In practice, that means focusing on how institutions can deploy AI responsibly, not just efficiently, so innovation strengthens oversight, security, and sustainability.
             </p>
             <p>
-              I have expertise in translating complex technical security requirements into scalable operational frameworks while accelerating mission-critical AI research and development. I also have a proven track record building stakeholder alignment, designing outcome-focused metrics, and agile delivery support.
+              I came to this through an unusual path: undergraduate research on global security and justice, a Cambridge MPhil studying multi-agent reinforcement learning, agritech innovation, and AI-enabled biotech governance, and several years delivering large-scale technology programs across 190+ countries for governments, NGOs, and startups. That combination of research depth and operational experience shapes how I work day to day: translating between the technical frontier and the institutions that have to govern it, whether they be commercial, governmental, or scientific.
             </p>
             <p>
-              I thrive in roles that demand both strategic structure and ethical nuance — building bridges between technical teams, policymakers, and mission-driven leaders to create AI systems that are not only performant but principled.
+              Currently I design AI governance simulations with Google DeepMind at Intelligence Rising, lead data strategy and business analysis at Accenture Song, and conduct independent research on the political economy of frontier AI safety. I work best in roles that demand both strategic rigour and ethical nuance, where the research has to actually land somewhere.
+            </p>
+            <p>
+              Outside of work I'm usually found in a community garden, hiking somewhere cold, or reading about things that have nothing to do with AI — which, it turns out, is often where the best ideas come from.
             </p>
           </div>
 
@@ -39,8 +42,8 @@ const About = () => {
               <span className="stat-label">Countries Served</span>
             </div>
             <div className="stat">
-              <span className="stat-number">4</span>
-              <span className="stat-label">Years Experience</span>
+              <span className="stat-number">5+</span>
+              <span className="stat-label">Years of Professional and Research Experience</span>
             </div>
           </div>
         </div>

@@ -18,7 +18,10 @@ const Hero = () => {
           <em>AI Safety & Governance. Research to Impact.</em>
         </p>
         <p className="hero-description">
-          Bridging research, policy, and implementation to enable responsible AI at scale — across healthcare, cybersecurity, diplomacy, and sustainability.
+        Bridging research, policy, and technical implementation to ensure AI development goes well for everyone, not just those building it.
+        </p>
+        <p className="hero-description hero-description-secondary">
+          AI researcher, governance specialist, and data consultant. Building AI governance simulations with Google DeepMind at Intelligence Rising, leading data strategy and business analysis at Accenture Song, and independently researching the political economy of frontier AI safety and global AI development &mdash; and writing about it.
         </p>
         <div className="hero-scroll" onClick={() => document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' })}>
           <span className="hero-scroll-arrow">&#8595;</span>

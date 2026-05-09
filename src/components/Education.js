@@ -100,83 +100,24 @@ const Education = () => {
     }
   ];
 
-  const additionalExperience = [
+  const certifications = [
     {
-      title: "AI Trainer - English Language Specialist",
-      organization: "Invisible AI",
-      duration: "Aug 2025 – Present",
-      description: "Selected to join Invisible AI's specialist network supporting the development of advanced language models. Role focuses on training AI systems in nuanced English usage, communication clarity, and transparent feedback.",
-      url: "https://www.invisible.ai/",
-      logo: `${process.env.PUBLIC_URL}/work-logo/invisibleai.png`
+      name: "Google: Cloud Digital Leader Certification",
+      logo: `${process.env.PUBLIC_URL}/university-logo/google.png`
     },
     {
-      title: "English Communication Tutor",
-      organization: "Ringle",
-      duration: "Sep 2024 – Present",
-      description: "Tutors Korean professionals (lawyers, engineers, C-suite executives) on AI landscape, geopolitics, and strategic communication, designing custom learning materials with sector-specific applications",
-      url: "https://www.ringletutor.com/en/tutor/landing/home",
-      logo: `${process.env.PUBLIC_URL}/work-logo/ringle.png`
-    },
-    {
-      title: "Space Force Analyst",
-      organization: "DoD & Batten School of Leadership: National Security Center",
-      duration: "Spring 2020",
-      description: "Executed strategic organizational analysis on institutional culture; co-authored policy recommendations for Department of Defense to optimize effectiveness of new technological security frameworks",
-      url: "https://nspcbatten.org/",
-      logo: `${process.env.PUBLIC_URL}/work-logo/nationalsecuritycenter.svg`
-    },
-    {
-      title: "Data Research Analyst",
-      organization: "Batten School of Leadership: Global Policy Center",
-      duration: "Fall 2019",
-      description: "Translated and analyzed 20+ Spanish-language reports to build comprehensive geospatial Excel model mapping Venezuelan migration patterns; delivered policy briefs with 5-person team that guided strategic response planning for Save the Children NGO",
-      logo: `${process.env.PUBLIC_URL}/work-logo/nationalsecuritycenter.svg`
-    },
-    {
-      title: "NY Metro Lead",
-      organization: "Accenture Refugee Employee Group",
-      duration: "Dec 2022 – Sep 2024",
-      description: "Coordinated resettlement initiatives across 7 NGOs serving 500+ refugees, managing resource allocation and service delivery programs with focus on child welfare and family integration. Served as Spanish legal translator supporting vulnerable families in partnership with Tent NGO",
+      name: "Accenture: Reinvention with Agentic AI",
       logo: `${process.env.PUBLIC_URL}/work-logo/accenture.png`
     },
     {
-      title: "AI Archive Volunteer",
-      organization: "Every Name Counts",
-      duration: "Oct 2022 – Aug 2024",
-      description: "Transcribed historical victim data for digital memorial preservation using AI and optical character recognition",
-      logo: `${process.env.PUBLIC_URL}/work-logo/everynamecounts.jpeg`
-    },
-    {
-      title: "Senior Facilitator Fellow",
-      organization: "Intelligence Rising",
-      duration: "Sep 2025 – Present",
-      description: "Trained to lead strategic simulations on AI futures using roleplay-based decision-making to explore governance, safety, and geopolitics. Developed deep understanding of how competing stakeholders navigate ambiguity and sociotechnical policy; work directly informed by AI safety literature and collaboration with ARIA and Google DeepMind.",
+      name: "Intelligence Rising: Strategic AI Governance Simulation Facilitator",
+      url: "https://credsverse.com/credentials/eaf250ae-b2b7-4c82-81c5-a2bb7bdd7f5d",
       logo: `${process.env.PUBLIC_URL}/work-logo/intelligencerising.webp`
     },
     {
-      title: "Clare College Punt Admiral",
-      organization: "Clare College, Cambridge",
-      duration: "Sep 2024 – July 2025",
-      description: "Appointed Clare College Punt Admiral, coordinating boat access and safety for students and guests while fostering community through riverside traditions and seasonal events on the River Cam. Oversaw scheduling, insurance coordination, and maintenance for Clare College's punt fleet, managing access for over 500 users and ensuring safe, efficient operations throughout peak seasons.",
-      logo: `${process.env.PUBLIC_URL}/university-logo/cc.png`
+      name: "BlueDot Impact: Biosecurity",
+      logo: `${process.env.PUBLIC_URL}/university-logo/bluedotimpact.png`
     },
-    {
-      title: "Communications and Outreach Coordinator – Accenture DCAAT Executive Team",
-      organization: "Accenture",
-      duration: "March 2022 – September 2023",
-      description: "Led communications and outreach for Accenture's DCAAT Executive Team, designing and delivering programming for Senior Analysts and Analyst while aligning messaging with executive priorities and leveraging digital platforms to drive engagement, visibility, and cross-team collaboration.",
-      logo: `${process.env.PUBLIC_URL}/work-logo/accenture.png`
-    },
-    {
-      title: "Communications Designer",
-      organization: "One Journey Refugee Festival",
-      duration: "Aug 2022 – Sep 2024",
-      description: "Collaborated with marketing team to create festival's visual assets; achieved 160,000 impressions across platforms",
-      logo: `${process.env.PUBLIC_URL}/work-logo/onejourney.png`
-    }
-  ];
-
-  const certifications = [
     {
       name: "Center for AI and Digital Policy: AI Policy Clinic - Distinction",
       logo: `${process.env.PUBLIC_URL}/university-logo/center_4_ai_and_digital_policy.png`
@@ -310,56 +251,32 @@ const Education = () => {
           ))}
         </div>
 
-        <div className="additional-experience">
-          <h3 className="subsection-title">Additional Experience & Volunteer Work</h3>
-          <div className="additional-list">
-            {additionalExperience.map((exp, index) => (
-              <ExpandableCard
-                key={index}
-                header={
-                  <div className="additional-header-content">
-                    <div className="additional-header-left">
-                      {exp.logo && (
-                        <img
-                          src={exp.logo}
-                          alt={`${exp.organization} logo`}
-                          className="additional-logo"
-                          onError={(e) => { e.currentTarget.style.display = 'none'; }}
-                        />
-                      )}
-                      <div className="additional-header-info">
-                        <h4 className="additional-title">{exp.title}</h4>
-                        <p className="additional-organization-text">{exp.organization}</p>
-                      </div>
-                    </div>
-                    <span className="additional-duration">{exp.duration}</span>
-                  </div>
-                }
-              >
-                <p className="additional-description">{exp.description}</p>
-                {exp.url && (
-                  <a href={exp.url} target="_blank" rel="noopener noreferrer" className="additional-link">
-                    Visit website &rarr;
-                  </a>
-                )}
-              </ExpandableCard>
-            ))}
-          </div>
-        </div>
-
         <div className="certifications">
           <h3 className="subsection-title">Key Certifications</h3>
           <div className="certifications-grid">
             {certifications.map((cert, index) => (
               <div key={index} className="certification-item">
                 <div className="certification-content">
-                  <img
-                    src={cert.logo}
-                    alt={`${cert.name.split(':')[0]} logo`}
-                    className="certification-logo"
-                    onError={(e) => { e.currentTarget.style.display = 'none'; }}
-                  />
-                  <span className="certification-text">{cert.name}</span>
+                  {cert.logo && (
+                    <img
+                      src={cert.logo}
+                      alt={`${cert.name.split(':')[0]} logo`}
+                      className="certification-logo"
+                      onError={(e) => { e.currentTarget.style.display = 'none'; }}
+                    />
+                  )}
+                  {cert.url ? (
+                    <a
+                      href={cert.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="certification-text certification-link"
+                    >
+                      {cert.name}
+                    </a>
+                  ) : (
+                    <span className="certification-text">{cert.name}</span>
+                  )}
                 </div>
               </div>
             ))}
