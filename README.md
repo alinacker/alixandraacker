@@ -1,3 +1,3 @@
 # Alixandra Acker
 
-This is a portfolio website
+This is a portfolio website belonging to Alixandra Acker
